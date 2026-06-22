@@ -1,1 +1,20 @@
-node_modules
+# Dependency directories
+node_modules/
+
+# Compiler outputs
+dist/
+dist-ssr/
+*.local
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS metadata
+.DS_Store
+Thumbs.db
