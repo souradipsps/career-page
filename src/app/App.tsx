@@ -1335,6 +1335,7 @@ export default function App() {
                     letterSpacing: "0.08em",
                     background: "transparent",
                     transition: "all 0.2s",
+                    cursor: "pointer",
                   }}
                   className="px-10 py-3 rounded-sm uppercase tracking-wider"
                 >
