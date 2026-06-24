@@ -879,10 +879,19 @@ export function CandidateDashboard({
           </div>
           <button
             onClick={() => {
-              if (activeTab === "resume" && resumeReplaced) {
-                setPendingNavigation({ type: "close" });
+              const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+              if (isMobile && activeTab !== "dashboard") {
+                if (activeTab === "resume" && resumeReplaced) {
+                  setPendingNavigation({ type: "tab", targetId: "dashboard" });
+                } else {
+                  setActiveTab("dashboard");
+                }
               } else {
-                onClose();
+                if (activeTab === "resume" && resumeReplaced) {
+                  setPendingNavigation({ type: "close" });
+                } else {
+                  onClose();
+                }
               }
             }}
             style={{

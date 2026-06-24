@@ -167,7 +167,7 @@ const jobs = [
       "Strong written and verbal communication",
     ],
   },
-  
+
 ];
 
 const benefits = [
