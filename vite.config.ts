@@ -34,6 +34,9 @@ export default defineConfig({
   // Expose to local network
   server: {
     host: true,
+    allowedHosts: [
+      'career-page-ksip.onrender.com',
+    ],
   },
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
