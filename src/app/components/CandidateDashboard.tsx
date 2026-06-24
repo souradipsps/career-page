@@ -804,31 +804,47 @@ export function CandidateDashboard({
           >
             <Menu size={20} />
           </button>
-          <img
-            src={logoImg}
-            alt="South Point School"
-            style={{ height: "32px", objectFit: "contain" }}
-          />
-          <div>
-            <div
-              style={{
-                color: GOLD,
-                fontSize: "0.85rem",
-                fontWeight: 700,
-                fontFamily: "'Playfair Display', serif",
-                lineHeight: 1.1,
-              }}
-            >
-              South Point School
-            </div>
-            <div
-              style={{
-                color: "rgba(255,255,255,0.6)",
-                fontSize: "0.6rem",
-                letterSpacing: "0.1em",
-              }}
-            >
-              CANDIDATE PORTAL
+          <div
+            onClick={() => {
+              if (activeTab === "resume" && resumeReplaced) {
+                setPendingNavigation({ type: "close" });
+              } else {
+                onClose();
+              }
+            }}
+            style={{
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+            }}
+          >
+            <img
+              src={logoImg}
+              alt="South Point School"
+              style={{ height: "32px", objectFit: "contain" }}
+            />
+            <div>
+              <div
+                style={{
+                  color: GOLD,
+                  fontSize: "0.85rem",
+                  fontWeight: 700,
+                  fontFamily: "'Playfair Display', serif",
+                  lineHeight: 1.1,
+                }}
+              >
+                South Point School
+              </div>
+              <div
+                style={{
+                  color: "rgba(255,255,255,0.6)",
+                  fontSize: "0.6rem",
+                  letterSpacing: "0.1em",
+                }}
+              >
+                CANDIDATE PORTAL
+              </div>
             </div>
           </div>
         </div>

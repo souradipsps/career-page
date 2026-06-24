@@ -260,6 +260,12 @@ export default function App() {
   const [applyAfterSignup, setApplyAfterSignup] =
     useState(false);
   const [showDashboard, setShowDashboard] = useState(false);
+
+  useEffect(() => {
+    if (!showDashboard) {
+      window.scrollTo(0, 0);
+    }
+  }, [showDashboard]);
   const [dashboardInitialTab, setDashboardInitialTab] =
     useState<string>("dashboard");
   const [loggedInUser, setLoggedInUser] = useState("");
@@ -394,7 +400,10 @@ export default function App() {
       >
         <div className="max-w-7xl mx-auto px-8 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3.5">
+            <div
+              className="flex items-center gap-3.5 cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               <img
                 src={logoImg}
                 alt="South Point School Logo"
@@ -1934,7 +1943,10 @@ export default function App() {
         className="py-10 px-6"
       >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+          <div
+            className="flex items-center gap-3 cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <img
               src={logoImg}
               alt="South Point School"
