@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { LoginModal } from "./components/LoginModal";
 import { ApplyModal, ApplyFormData } from "./components/ApplyModal";
 import { CandidateDashboard } from "./components/CandidateDashboard";
@@ -246,6 +246,15 @@ const stats = [
 ];
 
 export default function App() {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch("https://career-page-ksip.onrender.com", { method: "HEAD", mode: "no-cors" })
+        .then(() => console.log("Keep-awake ping sent to Render server"))
+        .catch((e) => console.error("Keep-awake ping failed:", e));
+    }, 10000);
+    return () => clearInterval(interval);
+  }, []);
+
   const [showLogin, setShowLogin] = useState(false);
   const [showApply, setShowApply] = useState(false);
   const [applyAfterSignup, setApplyAfterSignup] =
